@@ -87,7 +87,7 @@ Component({
       let _options = this.data.options
       for(let valueIndex in this.data.value){
         for(let optionIndex in _options){
-          if(this.data.value[valueIndex] === _options[optionIndex].label || this.data.value[valueIndex] === _options[optionIndex].value || this.data.value[valueIndex] === _options[optionIndex]){
+          if(this.data.value[valueIndex] === _options[optionIndex].value || this.data.value[valueIndex] === _options[optionIndex].label || this.data.value[valueIndex] === _options[optionIndex]){
             _pickOptions.push({
               label: _options[optionIndex].label,
               value: _options[optionIndex].value

@@ -45,30 +45,18 @@
 
 ### props
 
-#### height
+ | 属性 | 类型 | 说明 |
+| height | Number | 级联器高度，最小值300，默认500，单位rpx |
+| placeholder | String | 占位提示符 |
+| value | [ Number, String, Array ]  | 初始化选中值， 单级级联时可传递 Number、String 。 多级级联请传入 Array |
+| options | Array | 待选项，格式如下 |
 
-Number 
+#### options格式
 
-级联器高度，最小值300，默认500，单位rpx
-
-#### placeholder
-
-String
-
-占位提示
-
-#### value
-
-[ Number, String, Array ] 
-
-当前选中值， 单级级联时可传递 Number、String 。 多级级联请传入 Array
-
-
-#### options
-
-Array
-
-选项， 格式如下
+ | 属性 | 说明 |
+ | label | 显示在选择器上的文本 |
+ | value | 对应的值，唯一标识 |
+ | children | 子级元素，集合数组。 格式相同 |
 
 ```
 [{
@@ -81,27 +69,16 @@ Array
   }
   ...
   ]
-}
+
 ...
-]
+
 ```
 
 
 ### Events
 
-#### confirm
-
-确认选择
-
-Event.detail : Array
-
-#### cancel
-
-取消选择
-
-#### error
-
-组件错误
-
-
+ | 事件名 | 说明 | 回调参数 |
+| confirm | 选择 | `Event.detail : Array` |
+| cancel | 取消 | -- |
+| error | 组件内部错误  | `Event.detail : String`  |
 
