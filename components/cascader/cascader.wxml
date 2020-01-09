@@ -1,0 +1,39 @@
+<!--components/cascader.wxml-->
+<view class="half-screen-dialog">
+  <view class="cascader fadeInUp"
+    style="height:{{height}}rpx">
+    <!-- 头部功能栏 -->
+    <view class="header">
+      <view class="placeholder">{{placeholder}}</view>
+      <view class="close-dialog" bindtap="cancelEvent">
+        <image class="icon icon-close" src="./assets/icon-close.png">
+        </image>
+      </view>
+    </view>
+    <!-- 已选择及待选择区域 -->
+    <view class="preview">
+      <view class="pick-options">
+        <view 
+          class="pick-option {{finish && index === pickOptions.length-1 ? 'active':''}}"
+          wx:for="{{pickOptions}}"
+          wx:for-item="pickOption"
+          wx:for-index="index"
+          wx:key="index"
+          data-pick-option-index="{{index}}"
+          bindtap="pickOptionEvent">{{pickOption.label || pickOption.value}}</view>
+        <view wx:if="{{!finish}}"
+          class="pick-option active">请选择</view>
+      </view>
+    </view>
+    <!-- 待选区域 -->
+    <view class="options">
+      <view class="option"
+        wx:for="{{currentOptions}}"
+        data-option-value="{{option.value}}"
+        wx:for-item="option"
+        wx:for-index="index"
+        wx:key="index"
+        bindtap="pickCurrentOptionEvent">{{option.label}}</view>
+    </view>
+  </view>
+</view>

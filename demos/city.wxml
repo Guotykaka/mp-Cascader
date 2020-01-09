@@ -1,0 +1,13 @@
+<!--demos/city.wxml-->
+<view style="margin:30rpx;">您当前选择的城市是 {{city}}</view>
+<button bindtap="showCascader">选择位置</button>
+<cascader
+  wx:if="{{cascaderStatus}}"
+  height="{{800}}"
+  value="{{city}}"
+  options="{{cities}}"
+  placeholder="请选择您当前所在位置"
+  bind:cancel="cancelEvent"
+  bind:error="errorEvent"
+  bind:confirm="confirmEvent">
+</cascader>
