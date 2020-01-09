@@ -92,7 +92,7 @@ Component({
               label: _options[optionIndex].label,
               value: _options[optionIndex].value
             })
-            _finish = !_options[optionIndex].children
+            _finish = !_options[optionIndex].children || _options[optionIndex].children.length === 0
             _finish ? [_options[optionIndex]||{}] : (_options = _options[optionIndex].children || [])
             break
           }
